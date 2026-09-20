@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KALEIDOSCOPE — Debugging Assessment</title>
+<style>
+  body {
+    max-width: 760px;
+    margin: 40px auto;
+    padding: 0 20px 60px;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+    color: #1a2330;
+    background: #f6f8fb;
+  }
+  header {
+    border-bottom: 3px solid #2f6fb0;
+    margin-bottom: 28px;
+    padding-bottom: 12px;
+  }
+  h1 { margin: 0 0 4px; font-size: 26px; color: #123; }
+  .sub { color: #5a6b80; font-size: 14px; }
+  .q {
+    background: #fff;
+    border: 1px solid #dbe3ee;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+    box-shadow: 0 1px 3px rgba(20,40,80,0.05);
+  }
+  .qnum { color: #2f6fb0; font-weight: 700; }
+  .prompt { margin: 4px 0 10px; }
+  pre {
+    background: #0d1a2b;
+    color: #e6f0ff;
+    padding: 12px 14px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: "Consolas", ui-monospace, monospace;
+    font-size: 13.5px;
+    line-height: 1.5;
+    margin: 8px 0 12px;
+  }
+  ol.opts { list-style: none; margin: 0; padding: 0; }
+  ol.opts li {
+    padding: 7px 10px;
+    border: 1px solid #e2e8f1;
+    border-radius: 5px;
+    margin-bottom: 7px;
+    background: #fbfcfe;
+  }
+  .letter { font-weight: 700; color: #2f6fb0; margin-right: 8px; }
+  code { background: #eef2f8; padding: 1px 5px; border-radius: 4px; font-family: "Consolas", monospace; }
+</style>
+</head>
+<body>
+<header>
+  <h1>KALEIDOSCOPE — Debugging Assessment</h1>
+  <div class="sub">10 questions &middot; JavaScript &middot; choose the single best answer</div>
+</header>
+
+<div class="q">
+  <p class="prompt"><span class="qnum">Q1.</span> What does this print?</p>
+  <pre>const a = [10, 20, 30];
+console.log(a[a.length]);</pre>
+  <ol class="opts">
+    <li><span class="letter">A</span> 30</li>
+    <li><span class="letter">B</span> undefined</li>
+    <li><span class="letter">C</span> 3</li>
+    <li><span class="letter">D</span> Throws a RangeError</li>
+  </ol>
+</div>
+
+<div class="q">
+  <p class="prompt"><span class="qnum">Q2.</span> What is logged?</p>
+  <pre>const nums = [4, 8, 15];
+let sum = 0;
+for (let i = 0; i <= nums.length; i++) {
+  sum += nums[i];
+}
+console.log(sum);</pre>
+  <ol class="opts">
+    <li><span class="letter">A</span> 27</li>
+    <li><span class="letter">B</span> NaN</li>
+    <li><span class="letter">C</span> 31</li>
+    <li><span class="letter">D</span> undefined</li>
+  </ol>
+</div>
+
+<div class="q">
+  <p class="prompt"><span class="qnum">Q3.</span> What happens when this runs?</p>
+  <pre>const list = [];
+if (list.length() === 0) {
+  console.log("empty");
+}</pre>
+  <ol class="opts">
+    <li><span class="letter">A</span> Logs <code>"empty"</code></li>
+    <li><span class="letter">B</span> Logs nothing and continues</li>
+    <li><span class="letter">C</span> Throws <code>TypeError: list.length is not a function</code></li>
+    <li><span class="letter">D</span> Throws <code>ReferenceError: length is not defined</code></li>
+  </ol>
+</div>
+
+<div class="q">
+  <p class="prompt"><span class="qnum">Q4.</span> What is the value of <code>result</code>?</p>
+  <pre>const result = [1, 2, 3].map(n => { n * 2 });
+console.log(result);</pre>
+  <ol class="opts">
+    <li><span class="letter">A</span> [2, 4, 6]</li>
+    <li><span class="letter">B</span> [undefined, undefined, undefined]</li>
+    <li><span class="letter">C</span> [1, 2, 3]</li>
+    <li><span class="letter">D</span> undefined</li>
+  </ol>
+</div>
+
+<div class="q">
+  <p class="prompt"><span class="qnum">Q5.</span> What does <code>check</code> return here?</p>
+  <pre>function check(u) {
+  if (u.role = "guest") return "denied";
+  return "ok";
+}
+console.log(check({ role: "admin" }));</pre>
+  <ol class="opts">
+    <li><span class="letter">A</span> "ok"</li>
+    <li><span class="letter">B</span> "denied"</li>
+    <li><span class="letter">C</span> "admin"</li>
+    <li><span class="letter">D</span> Throws a TypeError</li>
+  </ol>
+</div>
+
+<div class="q">
+  <p class="prompt"><span class="qnum">Q6.</span> Which one of these comparisons evaluates to <code>false</code>?</p>
+  <ol class="opts">
+    <li><span class="letter">A</span> <code>"" == 0</code></li>
+    <li><span class="letter">B</span> <code>0 == false</code></li>
+    <li><span class="letter">C</span> <code>"0" == 0</code></li>
+    <li><span class="letter">D</span> <code>null == 0</code></li>
+  </ol>
+</div>
+
+<div class="q">
+  <p class="prompt"><span class="qnum">Q7.</span> What is logged?</p>
+  <pre>const x = Number("abc");
+console.log(x === NaN, Number.isNaN(x));</pre>
+  <ol class="opts">
+    <li><span class="letter">A</span> true true</li>
+    <li><span class="letter">B</span> false true</li>
+    <li><span class="letter">C</span> true false</li>
+    <li><span class="letter">D</span> false false</li>
+  </ol>
+</div>
+
+<div class="q">
+  <p class="prompt"><span class="qnum">Q8.</span> What happens when this runs?</p>
+  <pre>function greet(user) {
+  return "Hi, " + user.name;
+}
+console.log(greet());</pre>
+  <ol class="opts">
+    <li><span class="letter">A</span> Logs <code>"Hi, undefined"</code></li>
+    <li><span class="letter">B</span> Logs <code>"Hi, "</code></li>
+    <li><span class="letter">C</span> Throws a TypeError</li>
+    <li><span class="letter">D</span> Logs <code>"Hi, null"</code></li>
+  </ol>
+</div>
+
+<div class="q">
+  <p class="prompt"><span class="qnum">Q9.</span> What does the final line print?</p>
+  <pre>const fns = [];
+for (var i = 0; i < 3; i++) {
+  fns.push(() => i);
+}
+console.log(fns[0](), fns[1](), fns[2]());</pre>
+  <ol class="opts">
+    <li><span class="letter">A</span> 0 1 2</li>
+    <li><span class="letter">B</span> 3 3 3</li>
+    <li><span class="letter">C</span> 0 0 0</li>
+    <li><span class="letter">D</span> undefined undefined undefined</li>
+  </ol>
+</div>
+
+<div class="q">
+  <p class="prompt"><span class="qnum">Q10.</span> What is logged?</p>
+  <pre>const scores = [3, 1, 2];
+const top = scores.sort();
+console.log(scores === top, scores);</pre>
+  <ol class="opts">
+    <li><span class="letter">A</span> false&nbsp;&nbsp;[3, 1, 2]</li>
+    <li><span class="letter">B</span> true&nbsp;&nbsp;[1, 2, 3]</li>
+    <li><span class="letter">C</span> false&nbsp;&nbsp;[1, 2, 3]</li>
+    <li><span class="letter">D</span> true&nbsp;&nbsp;[3, 1, 2]</li>
+  </ol>
+</div>
+
+</body>
+</html>
